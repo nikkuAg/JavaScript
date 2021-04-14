@@ -167,13 +167,13 @@ cpassword.oninput = function(){
 qualification.oninput = function(){
     if(qualification.value != ""){
         countQualification = 0;
-        document.getElementById("errorAge").style.display = "inline";
-        document.getElementById("errorAge").innerHTML = "Select Qualification";
+        document.getElementById("errorQualification").style.display = "inline";
+        document.getElementById("errorQualification").innerHTML = "Select Qualification";
     }
     else{
         countQualification = 1;
-        document.getElementById("errorAge").style.display = "none";
-        document.getElementById("errorAge").innerHTML = "";
+        document.getElementById("errorQualification").style.display = "none";
+        document.getElementById("errorQualification").innerHTML = "";
     }
 }
 male.oninput = function(){
