@@ -163,7 +163,7 @@ password.oninput = function(){
         a=0;
     }
     countPassword = x + y + z + a;
-    if(countPassword < 4 && password.value.length <8){
+    if(countPassword < 4 && password.value.length <8 &&countPassword>0){
         countPassword = 0;
         document.getElementById("errorPassword").style.display = "inline-block";
         document.getElementById("errorPassword1").style.display = "inline-block";
