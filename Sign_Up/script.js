@@ -170,6 +170,12 @@ password.oninput = function(){
         document.getElementById("errorPassword").innerHTML = "Enter a valid password of minimum 8 characters. Password should contain atleast one a-z,";
         document.getElementById("errorPassword1").innerHTML = "atleast one A-Z, atleast one Number and atleast one Special Character."
     }
+    else if(countPassword==0 && password.value.length == 0){
+        countPassword = 0;
+        document.getElementById("errorPassword").style.display = "inline-block";
+        document.getElementById("errorPassword").innerHTML = "Password cannot be empty";
+        document.getElementById("errorPassword1").style.display = "none";
+    }
     else{
         countPassword = 1;
         document.getElementById("errorPassword").style.display = "none";
