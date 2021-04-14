@@ -20,12 +20,19 @@
         p{
             display: none;
             border: 2px solid red;
-            background-color: rgb(238, 203, 203);
+            background-color: rgb(254, 241, 211);
             padding: 10px;
             color: red;
             font-weight: 700;
-            font-family: 'TypoPRO Bebas Neue';
+            font-family: 'Verdana, Geneva, Tahoma, sans-serif';
             font-size: 20px;
+        }
+        .one{
+            margin-bottom: 5px;
+        }
+        .extra{
+            display: none;
+            margin-top: 0px;
         }
         .h1{
             text-align: center;
@@ -78,37 +85,37 @@
             <label for="username">
                 Name:
             </label><br>
-            <input  type="text" id="username" name="username" minlength="3" maxlength="30" size="40"><br><br>
+            <input  type="text" id="username" name="username" maxlength="30" size="40"><br><br>
             <p id="errorName"></p>
             <br><br>
             <label for="phone">
                 Phone Number:
             </label><br>
             <input  type="text" id="phone" name="phoneNumber" minlength="10" maxlength="14" size="20">
-            <br><br><p id="errorNum"></p>
+            <br><br><p id="errorNum" class="one"></p><br><p id="errorNum1" class="extra"></p>
             <br><br>
             <label for="city">
                 City:
             </label><br>
-            <input  type="text" id="city" name="city" minlength="3" size="20">
+            <input  type="text" id="city" name="city" size="20">
             <br><br><p id="errorCity"></p>
             <br><br>
             <label for="email">
                 Email:
             </label><br>
-            <input  type="email" id="email" minlength="9" name="email" size="25">
+            <input  type="email" id="email" name="email" size="25">
             <br><br><p id="errorEmail"></p>
             <br><br>
             <label for="password">
                 Password:
             </label><br>
-            <input  type="password" id="password" name="password" size="15" minlength="8" value="">
-            <br><br><p id="errorPassword"></p>
+            <input  type="password" id="password" name="password" size="15" value="">
+            <br><br><p id="errorPassword" class="one"></p><br><p id="errorPassword1" class="extra"></p>
             <br><br>
             <label for="cpassword">
                 Confirm Password:
             </label><br>
-            <input  type="password" id="cpassword" name="cpassword" size="15" minlength="8" value="">
+            <input  type="password" id="cpassword" name="cpassword" size="15" value="">
             <br><br><p id="errorCPassword"></p>
             <br><br>
             <label for="age">

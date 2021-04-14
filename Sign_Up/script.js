@@ -24,18 +24,25 @@ var cpassword = document.getElementById("cpassword");
 username.oninput = function(){
     var nameCheck = /^[A-Za-z .]+$/
     if(nameCheck.test(username.value)){
-        countName =1;
-        document.getElementById("errorName").innerHTML = "";
-        document.getElementById("errorName").style.display = "none";
+        if(username.value.length >2){
+            countName =1;
+            document.getElementById("errorName").innerHTML = "";
+            document.getElementById("errorName").style.display = "none";
+        }
+        else{
+            countName =0;
+            document.getElementById("errorName").style.display = "inline-block";
+            document.getElementById("errorName").innerHTML = "Enter a valid name";
+        }
     }
     else if(username.value == ""){
         countName =0;
-        document.getElementById("errorName").style.display = "inline";
+        document.getElementById("errorName").style.display = "inline-block";
         document.getElementById("errorName").innerHTML = "Name cannot be empty";
     }
     else{
         countName =0;
-        document.getElementById("errorName").style.display = "inline";
+        document.getElementById("errorName").style.display = "inline-block";
         document.getElementById("errorName").innerHTML = "Enter a valid name";
     }
 }
@@ -45,34 +52,48 @@ number.oninput = function(){
         countNumber =1;
         document.getElementById("errorNum").innerHTML = "";
         document.getElementById("errorNum").style.display = "none";
+        document.getElementById("errorNum1").style.display = "none";
     }
     else if(number.value == ""){
         countNumber = 0;
-        document.getElementById("errorNum").style.display = "inline";
+        document.getElementById("errorNum").style.display = "inline-block";
         document.getElementById("errorNum").innerHTML = "Phone Number cannot be empty";
+        document.getElementById("errorNum1").style.display = "none";
     }
     else{
         countNumber = 0;
-        document.getElementById("errorNum").style.display = "inline";
-        document.getElementById("errorNum").innerHTML = "Enter a valid phone number. Eg: +91-8989898989 or +91 8989898989 or 8989898989";
+        document.getElementById("errorNum").style.display = "inline-block";
+        document.getElementById("errorNum").innerHTML = "Enter a valid phone number.";
+        document.getElementById("errorNum1").style.display = "inline-block";
+        document.getElementById("errorNum1").innerHTML = "Eg: +91-8989898989 or +91 8989898989 or 8989898989";
+        
     }
 }
 city.oninput = function(){
     var cityCheck = /^[A-Za-z .]+$/
     if(cityCheck.test(city.value)){
-        countCity =1;
-        document.getElementById("errorCity").innerHTML = "";
-        document.getElementById("errorCity").style.display = "none";
+        if(city.value.length >2){
+            countCity =1;
+            document.getElementById("errorCity").innerHTML = "";
+            document.getElementById("errorCity").style.display = "none";
+        }
+        else{
+            countCity =0;
+            document.getElementById("errorCity").style.display = "inline-block";
+            document.getElementById("errorCity").innerHTML = "Enter a valid city name";
+        }
+        
     }
     else if(city.value == ""){
         countCity =0;
-        document.getElementById("errorCity").style.display = "inline";
+        document.getElementById("errorCity").style.display = "inline-block";
         document.getElementById("errorCity").innerHTML = "City name cannot be empty";
     }
     else{
         countCity =0;
-        document.getElementById("errorCity").style.display = "inline";
+        document.getElementById("errorCity").style.display = "inline-block";
         document.getElementById("errorCity").innerHTML = "Enter a valid city name";
+        
     }
 }
 email.oninput = function(){
@@ -84,12 +105,12 @@ email.oninput = function(){
     }
     else if(email.value == ""){
         countEmail =0;
-        document.getElementById("errorEmail").style.display = "inline";
+        document.getElementById("errorEmail").style.display = "inline-block";
         document.getElementById("errorEmail").innerHTML = "Email cannot be empty";
     }
     else{
         countEmail =0;
-        document.getElementById("errorEmail").style.display = "inline";
+        document.getElementById("errorEmail").style.display = "inline-block";
         document.getElementById("errorEmail").innerHTML = "Enter a valid email";
     }
 }
@@ -102,12 +123,12 @@ age.oninput = function(){
     }
     else if(age.value == ""){
         countAge =0;
-        document.getElementById("errorAge").style.display = "inline";
+        document.getElementById("errorAge").style.display = "inline-block";
         document.getElementById("errorAge").innerHTML = "Age cannot be empty";
     }
     else{
         countAge =0;
-        document.getElementById("errorAge").style.display = "inline";
+        document.getElementById("errorAge").style.display = "inline-block";
         document.getElementById("errorAge").innerHTML = "Enter a valid age";
     }
 }
@@ -144,12 +165,15 @@ password.oninput = function(){
     countPassword = x + y + z + a;
     if(countPassword < 4 && password.value.length <8){
         countPassword = 0;
-        document.getElementById("errorPassword").style.display = "inline";
-        document.getElementById("errorPassword").innerHTML = "Enter a valid password of minimum 8 characters. Password should contain atleast one small character, atleast one capital character, atleast one number and atleast one special character.";
+        document.getElementById("errorPassword").style.display = "inline-block";
+        document.getElementById("errorPassword1").style.display = "inline-block";
+        document.getElementById("errorPassword").innerHTML = "Enter a valid password of minimum 8 characters. Password should contain atleast one small character,";
+        document.getElementById("errorPassword1").innerHTML = "atleast one capital character, atleast one number and atleast one special character."
     }
     else{
         countPassword = 1;
         document.getElementById("errorPassword").style.display = "none";
+        document.getElementById("errorPassword1").style.display = "none";
     }     
 
 }
@@ -160,14 +184,14 @@ cpassword.oninput = function(){
     }
     else{
         countCPassword = 0;
-        document.getElementById("errorCPassword").style.display = "inline";
+        document.getElementById("errorCPassword").style.display = "inline-block";
         document.getElementById("errorCPassword").innerHTML = "Password are not matching";
     }
 }
 qualification.oninput = function(){
     if(qualification.value != ""){
         countQualification = 0;
-        document.getElementById("errorQualification").style.display = "inline";
+        document.getElementById("errorQualification").style.display = "inline-block";
         document.getElementById("errorQualification").innerHTML = "Select Qualification";
     }
     else{
@@ -197,13 +221,13 @@ function form1(){
             return true;
         }
         else{    
-            document.getElementById("x").style.display = "inline";
+            document.getElementById("x").style.display = "inline-block";
             document.getElementById("x").innerHTML = "Fill all the details.";
             return false;
         }
     }
     else{
-        document.getElementById("errorGender").style.display = "inline";
+        document.getElementById("errorGender").style.display = "inline-block";
         document.getElementById("errorGender").innerHTML = "Select Gender";
         return false;
     }
