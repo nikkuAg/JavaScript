@@ -167,8 +167,8 @@ password.oninput = function(){
         countPassword = 0;
         document.getElementById("errorPassword").style.display = "inline-block";
         document.getElementById("errorPassword1").style.display = "inline-block";
-        document.getElementById("errorPassword").innerHTML = "Enter a valid password of minimum 8 characters. Password should contain atleast one small character,";
-        document.getElementById("errorPassword1").innerHTML = "atleast one capital character, atleast one number and atleast one special character."
+        document.getElementById("errorPassword").innerHTML = "Enter a valid password of minimum 8 characters. Password should contain atleast one a-z,";
+        document.getElementById("errorPassword1").innerHTML = "atleast one A-Z, atleast one Number and atleast one Special Character."
     }
     else{
         countPassword = 1;
