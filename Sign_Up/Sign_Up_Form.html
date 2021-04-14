@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap'); 
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+
+        body{
+            background-color: #f8d16c;
+            font-family: 'Lato', sans-serif;
+            margin: 0px;
+        }
+        .h1{
+            text-align: center;
+            font-size: 45px;
+            font-family: 'Playfair Display';
+            margin-top: 0px;
+            padding-top: 20px;
+        }
+        label{
+            font-size: 30px;
+            font-weight: 700;
+            color: #032957;
+        }
+        .form{
+            padding-left: 30px;
+        }
+        .genderLabel{
+            font-weight: 500;
+            color: black;
+        }
+        input{
+            font-size: 25px;
+        }
+        button{
+            padding: 10px;
+            margin-left: 45%;
+            margin-bottom: 30px;
+            font-family: 'Playfair Display';
+            background-color: white;
+            font-size: 25px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+        }
+        button:hover{
+            background-color:  #b5cff0;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 class="h1">Sign Up</h1>
+    <div class="form">
+        <form onsubmit="return form()">
+            <label for="username">
+                Name:
+            </label><br>
+            <input required="required" type="text" id="username" name="username" minlength="3" maxlength="30" size="40" pattern="^[A-Za-z ]+$">
+            <br><br>
+            <label for="phone">
+                Phone Number:
+            </label><br>
+            <input required="required" type="text" id="phone" name="phoneNumber" minlength="10" maxlength="14" size="20" pattern="^(\+91[- ])?[6|7|8|9][0-9]{9}$">
+            <br><br>
+            <label for="city">
+                City:
+            </label><br>
+            <input required="required" type="text" id="city" name="city" minlength="3" size="20" pattern="^[A-Za-z ]+$" >
+            <br><br>
+            <label for="email">
+                Email:
+            </label><br>
+            <input required="required" type="email" id="email" minlength="9" name="email" size="25" pattern="^[a-zA-Z0-9]+[a-zA-Z0-9\W_]*[a-zA-Z0-9]+@[a-zA-Z]+(.com)$">
+            <br><br>
+            <label for="password">
+                Password:
+            </label><br>
+            <input required="required" type="password" id="password" name="password" size="15" minlength="8" value="" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+            <br><br>
+            <label for="cpassword">
+                Confirm Password:
+            </label><br>
+            <input required="required" type="password" id="cpassword" name="cpassword" size="15" minlength="8" value="">
+            <br><br>
+            <label for="age">
+                Age:
+            </label><br>
+            <input required="required" type="text" id="age" name="age" size="10" pattern="^[1-9][0-9]{0,1}$"><label id="agelabel" for="age">&nbsp;&nbsp;years</label>
+            <br><br>
+            <label for="education">
+                Education Qualification:
+            </label><br>
+            <input required="required" list="qualification1" type="text" id="qualification" name="qualification" size="10" >
+            <datalist id="qualification1">
+                <option value="No Education">No formal education</option>
+                <option value="Primary">Primary education</option>
+                <option value="Secondary">Secondary education or high school</option>
+                <option value="Bachelor">Bachelor's degree</option>
+                <option value="Master">Master's degree</option>
+                <option value="Doctorate">Doctorate or higher</option>
+            </datalist>
+            <br><br>
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" required value="male">
+            <label for="male" class="genderLabel">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female" class="genderLabel">Female</label>
+            <br><br>
+            <button type="submit" onclick="form1()">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

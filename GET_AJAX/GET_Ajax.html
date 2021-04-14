@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET AJAX</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@200&display=swap'); 
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+        
+        
+        body{
+            background-color: #f8d16c;
+            font-family: 'Lato', sans-serif;
+            margin: 0px;
+        }
+        h1{
+            text-align: center;
+            margin: 0px;
+            padding: 30px 10px;
+        }
+        table{
+            position: relative;
+            top: 0px;
+            left: 30%
+        }
+        table, th, tr, td{
+            border: 2px solid #032957;
+            border-collapse: collapse;
+        }
+        th{
+            padding: 10px;
+            font-family: 'Plafair Display';
+        }
+        td{
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>GET AJAX</h1>
+    <table id="table"></table>>
+
+    <script>
+        var HTTPclient = function(){
+            this.get = function(url, response){
+                var request = new XMLHttpRequest();
+                request.onreadystatechange  = function(){
+                    if (request.readyState == 4 && request.status == 200){
+                        response(this.responseText);
+                    }
+                }
+
+                request.open("GET", url, true);
+                request.send();
+            }
+        }
+        var x = "";
+        urlRequest = "https://reqres.in/api/users/?page=1";
+        urlRequest2 = "https://reqres.in/api/users/?page=2";
+        var client = new HTTPclient();
+        client.get(urlRequest, function(responseR){
+            var obj = JSON.parse(responseR);
+            x += "<tr><th>ID</th><th>Avatar</th><th>Name</th><th>Email</th></tr>"
+            for (i in obj.data) {
+               // x += "<h2>" + obj.data[i].id + "</h2>" + obj.data[i].email + "<img src=" + obj.data[i].avatar +">";
+                x += "<tr><td>" + obj.data[i].id + "</td><td><img src=\"" + obj.data[i].avatar + "\"></td><td>" + obj.data[i].first_name + " " + obj.data[i].last_name +"</td><td>" + obj.data[i].email +"</td></tr>" 
+            }
+            document.getElementById("table").innerHTML = x;
+        })
+        client.get(urlRequest2, function(responseR){
+            var obj = JSON.parse(responseR);
+            for (i in obj.data) {
+               // x += "<h2>" + obj.data[i].id + "</h2>" + obj.data[i].email + "<img src=" + obj.data[i].avatar +">";
+                x += "<tr><td>" + obj.data[i].id + "</td><td><img src=\"" + obj.data[i].avatar + "\"></td><td>" + obj.data[i].first_name + " " + obj.data[i].last_name +"</td><td>" + obj.data[i].email +"</td></tr>" 
+            }
+            document.getElementById("table").innerHTML = x;
+        })
+
+    </script>
+</body>
+</html>
