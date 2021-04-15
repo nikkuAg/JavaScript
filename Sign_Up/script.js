@@ -195,7 +195,7 @@ cpassword.oninput = function(){
     }
 }
 qualification.oninput = function(){
-    if(qualification.value == ""){
+    if(qualification.value == "" || qualification.value == "select"){
         countQualification = 0;
         document.getElementById("errorQualification").style.display = "inline-block";
         document.getElementById("errorQualification").innerHTML = "Select Qualification";
