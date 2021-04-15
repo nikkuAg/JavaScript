@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 19</title>
 </head>
-<body>
+<body onload="checkCookie()">
     <h1>Assignment 19</h1><br><br>
     <img src="marbel.png">
     <script>
@@ -28,32 +28,76 @@
         //     var d = new Date(); 
         //     localStorage.setItem("time", d);
        // }
-            var a = 1;
-            var x;
-            var d;
-            var z;
-            var count = 0;
-            if(x = ""){
-                count = 1;
-                z = new Date();
-                document.cookie = "No-of-time-visited=" + a +";last-time-visited-at=" + z;
-                var y = document.cookie
-                alert("You have nerver visited!");
+            // var a = 1;
+            // var x;
+            // var d;
+            // var z;
+            // var count = 0;
+            // if(x = ""){
+            //     count = 1;
+            //     z = new Date();
+            //     document.cookie = "No-of-time-visited=" + a +";last-time-visited-at=" + z;
+            //     var y = document.cookie
+            //     alert("You have nerver visited!");
+            // }
+            // else{
+            //     if(count==1){
+            //         a++;
+            //         document.cookie = "No-of-time-visited=" + a + ";last-time-visited-at=" + z;    
+            //     }
+            //     else{
+            //         a++;
+            //         document.cookie = "No-of-time-visited=" + a + ";last-time-visited-at=" + d;
+            //     }
+            //     x = document.cookie;
+            //     d = new Date();
+            //     alert(x);
+            // }
+            function setCookie(cname,cvalue, cname2, cvalue2) {
+                document.cookie = cname + "=" + cvalue + ";" + cname2 + "=" + cvalue2;
             }
-            else{
-                if(count==1){
-                    a++;
-                    document.cookie = "No-of-time-visited=" + a + ";last-time-visited-at=" + z;    
+
+            function getCookie(cname) {
+                var name = cname + "=";
+                var decod = decodeURIComponent(document.cookie);
+                var array = decod.split(';');
+                for(var i = 0; i < array.length; i++) {
+                    var c = array[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
                 }
-                else{
-                    a++;
-                    document.cookie = "No-of-time-visited=" + a + ";last-time-visited-at=" + d;
-                }
-                x = document.cookie;
-                d = new Date();
-                alert(x);
+                return "";
             }
-            
+
+            function checkCookie() {
+                var a = 0;
+                var d = new Date();
+                var z;
+                var visit=getCookie("visited");
+                var date=getCookie("time"); 
+                if (visit != "") {
+                    a++;
+                    if(a==2){
+                        setCookie("visited", a, "time", z);
+                    }
+                    else{
+                        setCookie("visited", a, "time", d);
+                    }
+                    d = new Date();
+                    visit = getCookie("visited");
+                    date = getCookie("time");
+                    alert("You have visited this site " + visit + " number of times. And you visisted it last on " + date + ".");
+                } else {
+                    a++;
+                    z = new Date();
+                    setCookie("visited", a, "time", z);
+                    alert("You have never visited this site before");
+                }
+            }
     </script>
 
 
