@@ -53,8 +53,8 @@
             //     d = new Date();
             //     alert(x);
             // }
-            function setCookie(cname,cvalue, cname2, cvalue2) {
-                document.cookie = cname + "=" + cvalue + ";" + cname2 + "=" + cvalue2;
+            function setCookie(cname,cvalue) {
+                document.cookie = cname + "=" + cvalue;
             }
 
             function getCookie(cname) {
@@ -76,25 +76,27 @@
             function checkCookie() {
                 var a = 0;
                 var d = new Date();
-                var z;
+                var z = new Date();
                 var visit=getCookie("visited");
                 var date=getCookie("time"); 
                 if (visit != "") {
                     a++;
                     if(a==2){
-                        setCookie("visited", a, "time", z);
+                        setCookie("visited", a);
                     }
                     else{
                         setCookie("visited", a, "time", d);
                     }
                     d = new Date();
+                    setCookie("time", d);
                     visit = getCookie("visited");
                     date = getCookie("time");
                     alert("You have visited this site " + visit + " number of times. And you visisted it last on " + date + ".");
                 } else {
                     a++;
                     z = new Date();
-                    setCookie("visited", a, "time", z);
+                    setCookie("visited", a);
+                    setCookie("time", z);
                     alert("You have never visited this site before");
                 }
             }
