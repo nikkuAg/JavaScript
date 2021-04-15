@@ -195,7 +195,7 @@ cpassword.oninput = function(){
     }
 }
 qualification.oninput = function(){
-    if(qualification.value == "" || qualification.value == "select"){
+    if(qualification.value == "select"){
         countQualification = 0;
         document.getElementById("errorQualification").style.display = "inline-block";
         document.getElementById("errorQualification").innerHTML = "Select Qualification";
@@ -225,6 +225,11 @@ function form1(){
         document.getElementById("errorGender").innerHTML = "";
         if(count==8){
             return true;
+        }
+        else if(countQualification==0){
+            document.getElementById("x").style.display = "inline-block";
+            document.getElementById("x").innerHTML = "Select Qualification";
+            return false;
         }
         else{    
             document.getElementById("x").style.display = "inline-block";
