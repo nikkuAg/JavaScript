@@ -77,20 +77,19 @@
                 
                 var d = new Date();
                 var z = new Date();
-                var visit=getCookie("visited");
+                var visited=getCookie("visit");
                 var date=getCookie("time"); 
-                if (visit != "") {
-                    a = a+1;
-                    setCookie("visited", a);
+                if (visited != "") {
+                    a = Number(getCookie("visit")) + 1;
+                    setCookie("visit", a);
                     d = new Date();
-                    visit = getCookie("visited");
+                    visited = getCookie("visit");
                     date = getCookie("time");
                     setCookie("time", d);
-                    alert("You have visited this site " + visit + " number of times. And you visisted it last on " + date + ".");
+                    alert("You have visited this site " + visited + " number of times. And you visisted it last on " + date + ".");
                 } else {
-                    
                     z = new Date();
-                    setCookie("visited", a);
+                    setCookie("visit", a);
                     setCookie("time", z);
                     alert("You have never visited this site before");
                 }
