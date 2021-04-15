@@ -19,7 +19,16 @@ email1.oninput = function(){
         document.getElementById("errorEmail").innerHTML = "Enter a valid email";
     }
 }
-
+document.getElementById("mail").onkeypress = function(event){
+    if(event.key == "Enter"){
+        document.getElementById("btn").click();
+    }
+}
+document.getElementById("password").onkeypress = function(event){
+    if(event.key == "Enter"){
+        document.getElementById("btn").click();
+    }
+}
 
 function Fsubmit(){
     var password = document.getElementById("password").value;
