@@ -5,9 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@typopro/web-bebas-neue@3.7.5/TypoPRO-BebasNeue.min.css"/>
-
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap'); 
         @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
@@ -75,8 +73,10 @@
         button:hover{
             background-color:  #b5cff0;
         }
+        #qualification{
+            font-size: 25px;
+        }
     </style>
-
 </head>
 <body>
     <h1 class="h1">Sign Up</h1>
@@ -127,15 +127,14 @@
             <label for="education">
                 Education Qualification:
             </label><br>
-            <input  list="qualification1" type="text" id="qualification" name="qualification" size="10" >
-            <datalist id="qualification1">
+            <select id="qualification" name="qualification">
                 <option value="No Education">No formal education</option>
                 <option value="Primary">Primary education</option>
                 <option value="Secondary">Secondary education or high school</option>
                 <option value="Bachelor">Bachelor's degree</option>
                 <option value="Master">Master's degree</option>
                 <option value="Doctorate">Doctorate or higher</option>
-            </datalist>
+            </select>
             <br><br><p id="errorQualification"></p>
             <br><br>
             <label>Gender:</label><br>

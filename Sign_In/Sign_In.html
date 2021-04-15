@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST AJAX</title>
+    
+    <style>
+        body{
+            background-color: #f8d16c;
+            font-family: 'Lato', sans-serif;
+            margin:0px 50px;
+        }
+        .h1{
+            text-align: center;
+            font-size: 45px;
+            font-family: 'Playfair Display';
+            margin-top: 0px;
+            padding-top: 20px;
+        }
+        p{
+            display: none;
+            border: 2px solid red;
+            background-color: rgb(254, 241, 211);
+            padding: 10px;
+            color: red;
+            font-weight: 700;
+            font-family: 'Verdana, Geneva, Tahoma, sans-serif';
+            font-size: 20px;
+        }
+        label{
+            font-size: 30px;
+            font-weight: 700;
+            color: #032957;
+        }
+        input{
+            font-size: 25px;
+        }
+        button{
+            padding: 10px;
+            margin-left: 45%;
+            margin-bottom: 30px;
+            font-family: 'Playfair Display';
+            background-color: white;
+            font-size: 25px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+            border: 0px;
+        }
+        button:hover{
+            background-color:  #b5cff0;
+        }
+        .message{
+            border: 2px solid red;
+            background-color: rgb(254, 241, 211);
+            padding: 10px;
+            color: red;
+            font-weight: 700;
+            font-family: 'Verdana, Geneva, Tahoma, sans-serif';
+            font-size: 25px;
+        }
+    </style>
+
+</head>
+<body class="body">
+    <h1 class="h1">Sign In</h1>
+    <p class="message"></p>
+    <form autocomplete="off">
+        <label for="mail">Email: </label><br>
+        <input type="email" id="mail" name="mail">
+        <br><p id="errorEmail"></p><br><br>
+        <label for="password">Password: </label><br>
+        <input type="password" id="password" name="password" class="enter"><br><br>
+        <button id="btn" type="button" value="submit" onclick="Fsubmit()">Submit</button>
+    </form>
+    <script src="sign_in.js"></script>
+</body>
+</html>

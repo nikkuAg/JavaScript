@@ -22,7 +22,7 @@ var cpassword = document.getElementById("cpassword");
 
 
 username.oninput = function(){
-    var nameCheck = /^[A-Za-z .]+$/
+    var nameCheck = /^[A-Za-z]+[A-Za-z \.'\,\-]*[A-Za-z\.]+$/
     if(nameCheck.test(username.value)){
         if(username.value.length >2){
             countName =1;
@@ -47,7 +47,7 @@ username.oninput = function(){
     }
 }
 number.oninput = function(){
-    var numberCheck = /^(\+91[- ])?[6|7|8|9][0-9]{9}$/
+    var numberCheck = /^(\+?91|\+?91[ -]|0)?[6|7|8|9][0-9]{9}$/
     if(numberCheck.test(number.value)){
         countNumber =1;
         document.getElementById("errorNum").innerHTML = "";
@@ -65,12 +65,12 @@ number.oninput = function(){
         document.getElementById("errorNum").style.display = "inline-block";
         document.getElementById("errorNum").innerHTML = "Enter a valid phone number.";
         document.getElementById("errorNum1").style.display = "inline-block";
-        document.getElementById("errorNum1").innerHTML = "Eg: +91-8989898989 or +91 8989898989 or 8989898989";
+        document.getElementById("errorNum1").innerHTML = "Eg: +91-8989898989 or +91 8989898989 or 8989898989 918989898989 or 08989898989 or 91 8989898989";
         
     }
 }
 city.oninput = function(){
-    var cityCheck = /^[A-Za-z .]+$/
+    var cityCheck = /^[A-Za-z]+[A-Za-z \.'\,]*(A-z[\.'\,\-]A-z| [\.'\,\-]A-z|A-z[\.'\,\-] )*[A-Za-z\.]+$/
     if(cityCheck.test(city.value)){
         if(city.value.length >2){
             countCity =1;
@@ -97,7 +97,7 @@ city.oninput = function(){
     }
 }
 email.oninput = function(){
-    var emailCheck = /^[a-zA-Z0-9]+[a-zA-Z0-9\W_]*[a-zA-Z0-9]+@[a-zA-Z]+(.com)$/
+    var emailCheck = /^[a-zA-Z0-9]+[a-zA-Z0-9\W_]*[a-zA-Z0-9]+@[a-zA-Z]+[\.A-z]+[a-zA-Z]+$/
     if(emailCheck.test(email.value)){
         countEmail =1;
         document.getElementById("errorEmail").innerHTML = "";
@@ -115,7 +115,7 @@ email.oninput = function(){
     }
 }
 age.oninput = function(){
-    var ageCheck = /^[1-9][0-9]{0,1}$/
+    var ageCheck = /^[1-9][0-9]{0,2}$/
     if(ageCheck.test(age.value)){
         countAge =1;
         document.getElementById("errorAge").innerHTML = "";
@@ -134,7 +134,7 @@ age.oninput = function(){
 }
 password.oninput = function(){
     var smallLetter = /[a-z]/;
-    var capitalLetter = /[A_Z]/;
+    var capitalLetter = /[A-Z]/;
     var numberPassword = /[0-9]/;
     var specialCharacter = /[\W_]/;
     var x,y,z,a;
@@ -195,7 +195,7 @@ cpassword.oninput = function(){
     }
 }
 qualification.oninput = function(){
-    if(qualification.value != ""){
+    if(qualification.value == ""){
         countQualification = 0;
         document.getElementById("errorQualification").style.display = "inline-block";
         document.getElementById("errorQualification").innerHTML = "Select Qualification";
