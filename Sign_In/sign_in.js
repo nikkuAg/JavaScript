@@ -1,6 +1,6 @@
 var countEmail = 0;
 var email1 = document.getElementById("mail");
-var emailCheck = /^[a-zA-Z0-9]+[a-zA-Z0-9\W_]*[a-zA-Z0-9]+@[a-zA-Z]+[\.A-z]+[a-zA-Z]+$/;
+var emailCheck = /^[a-zA-Z0-9]+[a-zA-Z0-9\W_]*[a-zA-Z0-9]+@[a-zA-Z]+\.[A-z]+[\.A-z]*[a-zA-Z]+$/;
 email1.oninput = function(){
     
     if(emailCheck.test(email1.value)){
@@ -33,10 +33,10 @@ function Fsubmit(){
         
         
         xhr.onreadystatechange = function(){
-            if(this.readyState==4 && this.status==200){
+            if(this.readyState == 4 && this.status == 200){
                 alert("Login successful   Response recieved:" + this.response);
             }
-            if(this.status ==400){
+            else if(this.status != 200 && this.readyState == 4){
                 alert("Login Unsccessful! Check your credentials!!");
             }
         }

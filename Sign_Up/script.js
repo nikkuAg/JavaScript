@@ -97,7 +97,7 @@ city.oninput = function(){
     }
 }
 email.oninput = function(){
-    var emailCheck = /^[a-zA-Z0-9]+[a-zA-Z0-9\W_]*[a-zA-Z0-9]+@[a-zA-Z]+[\.A-z]+[a-zA-Z]+$/
+    var emailCheck = /^[a-zA-Z0-9]+[a-zA-Z0-9\W_]*[a-zA-Z0-9]+@[a-zA-Z]+\.[A-z]+[\.A-z]*[a-zA-Z]+$/
     if(emailCheck.test(email.value)){
         countEmail =1;
         document.getElementById("errorEmail").innerHTML = "";
