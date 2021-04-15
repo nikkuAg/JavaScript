@@ -10,23 +10,50 @@
     <h1>Assignment 19</h1><br><br>
     <img src="marbel.png">
     <script>
-        if(localStorage.visited){
-            localStorage.visited = Number(localStorage.visited) + 1;
-            alert("You have visited this site " + localStorage.visited + " number of times.");
-        }
-        else{
-            localStorage.visited = 1;
-            alert("You have never visited this site");
-        }
-        if(localStorage.time){
-            alert("You last visited on " + localStorage.time);
-            var d= new Date();
-            localStorage.setItem("time", d);
-        }
-        else{
-            var d = new Date(); 
-            localStorage.setItem("time", d);
-        }
+
+        // if(localStorage.visited){
+        //     localStorage.visited = Number(localStorage.visited) + 1;
+        //     alert("You have visited this site " + localStorage.visited + " number of times.");
+        // }
+        // else{
+        //     localStorage.visited = 1;
+        //     alert("You have never visited this site");
+        // }
+        // if(localStorage.time){
+        //     alert("You last visited on " + localStorage.time);
+        //     var d= new Date();
+        //     localStorage.setItem("time", d);
+        // }
+        // else{
+        //     var d = new Date(); 
+        //     localStorage.setItem("time", d);
+       // }
+            var a = 1;
+            var x;
+            var d;
+            var z;
+            var count = 0;
+            if(x = ""){
+                count = 1;
+                z = new Date();
+                document.cookie = "No-of-time-visited=" + a +";last-time-visited-at=" + z;
+                var y = document.cookie
+                alert("You have nerver visited!");
+            }
+            else{
+                if(count==1){
+                    a++;
+                    document.cookie = "No-of-time-visited=" + a + ";last-time-visited-at=" + z;    
+                }
+                else{
+                    a++;
+                    document.cookie = "No-of-time-visited=" + a + ";last-time-visited-at=" + d;
+                }
+                x = document.cookie;
+                d = new Date();
+                alert(x);
+            }
+            
     </script>
 
 
