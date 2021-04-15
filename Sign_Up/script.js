@@ -143,32 +143,44 @@ password.oninput = function(){
     }
     else{
         x=0;
+
     }
     if(capitalLetter.test(password.value)){
         y=1;
     }
     else{
         y=0;
+
     }
     if(numberPassword.test(password.value)){
         z=1;
     }
     else{
         z=0;
+
     }
     if(specialCharacter.test(password.value)){
         a=1;
     }
     else{
         a=0;
+
     }
     countPassword = x + y + z + a;
-    if(countPassword < 4 && password.value.length <8 &&countPassword>0){
-        countPassword = 0;
-        document.getElementById("errorPassword").style.display = "inline-block";
-        document.getElementById("errorPassword1").style.display = "inline-block";
-        document.getElementById("errorPassword").innerHTML = "Enter a valid password of minimum 8 characters. Password should contain atleast one a-z,";
-        document.getElementById("errorPassword1").innerHTML = "atleast one A-Z, atleast one Number and atleast one Special Character."
+    if(countPassword < 4){
+        if(password.value.length == 0){
+            countPassword = 0;
+            document.getElementById("errorPassword").style.display = "inline-block";
+            document.getElementById("errorPassword").innerHTML = "Password cannot be empty";
+            document.getElementById("errorPassword1").style.display = "none";
+        }
+        else{
+            countPassword = 0;
+            document.getElementById("errorPassword").style.display = "inline-block";
+            document.getElementById("errorPassword1").style.display = "inline-block";
+            document.getElementById("errorPassword").innerHTML = "Enter a valid password of minimum 8 characters. Password should contain atleast one a-z,";
+            document.getElementById("errorPassword1").innerHTML = "atleast one A-Z, atleast one Number and atleast one Special Character."
+        }
     }
     else if(countPassword==0 && password.value.length == 0){
         countPassword = 0;
@@ -177,9 +189,17 @@ password.oninput = function(){
         document.getElementById("errorPassword1").style.display = "none";
     }
     else{
-        countPassword = 1;
-        document.getElementById("errorPassword").style.display = "none";
-        document.getElementById("errorPassword1").style.display = "none";
+        if(password.value.length <8){
+            countPassword = 0;
+            document.getElementById("errorPassword").style.display = "inline-block";
+            document.getElementById("errorPassword1").style.display = "none";
+            document.getElementById("errorPassword").innerHTML = "Enter a valid password of minimum 8 characters.";
+        }
+        else{
+            countPassword = 1;
+            document.getElementById("errorPassword").style.display = "none";
+            document.getElementById("errorPassword1").style.display = "none";
+        }
     }     
 
 }

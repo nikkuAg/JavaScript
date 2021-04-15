@@ -31,6 +31,7 @@ document.getElementById("password").onkeypress = function(event){
 }
 
 function Fsubmit(){
+    var count = 0;
     var password = document.getElementById("password").value;
     var email = document.getElementById("mail").value;
     if(countEmail == 1){
@@ -46,7 +47,10 @@ function Fsubmit(){
                 alert("Login successful   Response recieved:" + this.response);
             }
             else if(this.status != 200 && this.readyState == 4){
-                alert("Login Unsccessful! Check your credentials!!");
+                if(count ==0){
+                    alert("Login Unsccessful! Check your credentials!!");
+                }
+                count = 1;
             }
         }
     }
