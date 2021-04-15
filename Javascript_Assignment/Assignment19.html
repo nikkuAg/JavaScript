@@ -80,20 +80,20 @@
                 var visit=getCookie("visited");
                 var date=getCookie("time"); 
                 if (visit != "") {
-                    a++;
+                    a += 1;
                     if(a==2){
                         setCookie("visited", a);
                     }
                     else{
-                        setCookie("visited", a, "time", d);
+                        setCookie("visited", a);
                     }
                     d = new Date();
-                    setCookie("time", d);
                     visit = getCookie("visited");
                     date = getCookie("time");
+                    setCookie("time", d);
                     alert("You have visited this site " + visit + " number of times. And you visisted it last on " + date + ".");
                 } else {
-                    a++;
+                    a += 1;
                     z = new Date();
                     setCookie("visited", a);
                     setCookie("time", z);
