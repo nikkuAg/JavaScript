@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 16</title>
+
+    <style>
+        #marbel1{
+            position: absolute;
+            top:300px;
+            left:460px;
+        }
+        #marbel2{
+            
+            position: absolute;
+            top:220px;
+            left:350px;
+        }
+        #marbel3{
+            position: absolute;
+            top:130px;
+            left:350px;
+        }
+        #marbel4{
+            
+            position: absolute;
+            top:60px;
+            left:460px;
+        }
+        #marbel5{
+            
+            position: absolute;
+            top:130px;
+            left:570px;
+        }
+        #marbel6{
+            position: absolute;
+            top:220px;
+            left:570px;
+        }
+        #orange{
+            position: absolute;
+            top: 300px;
+            left: 460px;
+        }
+        button{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="move()">Start</button>
+    <img src="marbel.png" alt="Marbel" id="marbel1" class="img" >
+    <img src="marbel.png" alt="Marbel" id="marbel2" class="img" >
+    <img src="marbel.png" alt="Marbel" id="marbel3" class="img" >
+    <img src="marbel.png" alt="Marbel" id="marbel4" class="img" >
+    <img src="marbel.png" alt="Marbel" id="marbel5" class="img" >
+    <img src="marbel.png" alt="Marbel" id="marbel6" class="img" >
+    <img src="marbel2.png" id="orange" width="80px" onmouseover="abc()" onmouseout="bcd()">
+    
+
+
+
+    <script>
+        var x = new Array();
+        x  = [460, 350, 350, 460, 570, 570];
+        y = [300, 220, 130, 60, 130, 220];
+        var i = 0;
+        var j = 0;
+        var a =0;
+        var rotate;
+        function abc(){
+            a = 1;
+            clearTimeout(rotate);
+            xyz();
+        }
+        function bcd(){
+            clearTimeout(rotate)
+            a = 0;
+            xyz();
+        }
+        function xyz(){
+            clearTimeout(rotate);
+            if(a==0){
+                move();
+            }
+            else{
+                document.getElementById("orange").style.left = x[i]+"px";
+                document.getElementById("orange").style.top = y[i]+"px";
+            }
+            
+        }
+        function move(){
+               rotate =  setTimeout(function(){  
+                    if(i==5){
+                        i=-1;
+                    } 
+                    var k =i+1;      
+                    document.getElementById("orange").style.left = x[k]+"px";
+                    document.getElementById("orange").style.top = y[k]+"px";
+                    i++;
+                    xyz();
+                }, 1000)
+            }
+    </script>

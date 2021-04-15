@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 19</title>
+</head>
+<body>
+    <h1>Assignment 19</h1><br><br>
+    <img src="marbel.png">
+    <script>
+        if(localStorage.visited){
+            localStorage.visited = Number(localStorage.visited) + 1;
+            alert("You have visited this site " + localStorage.visited + " number of times.");
+        }
+        else{
+            localStorage.visited = 1;
+            alert("You have never visited this site");
+        }
+        if(localStorage.time){
+            alert("You last visited on " + localStorage.time);
+            var d= new Date();
+            localStorage.setItem("time", d);
+        }
+        else{
+            var d = new Date(); 
+            localStorage.setItem("time", d);
+        }
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Assignemnt 14</title>
+    
+    <script>
+        var count =0;
+        function myFunction(){
+            count += 1;
+            if(count==0){
+                document.getElementById("image").src = "1.jpeg";
+            }
+            else if (count ==1){
+                document.getElementById("image").src = "2.png";
+            }
+            else if (count ==2){
+                document.getElementById("image").src = "4.jpeg";
+            }
+            else if(count ==3){
+                document.getElementById("image").src = "imglogo.png";
+            }
+            else if(count ==4){
+                document.getElementById("image").src = "mail_icon.png";
+                count = -1;
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <img id="image" src="1.jpeg" width="400px" onclick="myFunction()">
+
+</body>
+</html>

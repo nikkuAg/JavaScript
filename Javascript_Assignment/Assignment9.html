@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Assignment 9</title>
+</head>
+<body>
+    <img  id="test1" src="1.jpeg" height="250px" onmouseover="onMouseOver1()" onmouseout="onMouseOut1()">
+    &nbsp;&nbsp;&nbsp;
+    <img src="2.png" id="test2" height="250px" onmouseover="onMouseOver2()" onmouseout="onMouseOut2()"/>
+    &nbsp;&nbsp;&nbsp;
+    <img src="4.jpeg" id="test3" height="250px" onmouseover="onMouseOver3()" onmouseout="onMouseOut3()"/>
+
+    <script>
+        function onMouseOver1(){
+            document.getElementById("test1").src = "imglogo.png";
+        }
+        function onMouseOver2(){
+            document.getElementById("test2").src = "imglogo.png";
+        }
+        function onMouseOver3(){
+            document.getElementById("test3").src = "imglogo.png";
+        }
+        function onMouseOut1(){
+            document.getElementById("test1").src = "1.jpeg";
+        }
+        function onMouseOut2(){
+            document.getElementById("test2").src = "2.png";
+        }
+        function onMouseOut3(){
+            document.getElementById("test3").src = "4.jpeg";
+        }
+    </script>
+</body>
+</html>

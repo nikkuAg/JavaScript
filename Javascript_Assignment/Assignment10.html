@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Assignment 10</title>
+</head>
+<body>
+    <img  id="test1" src="1.jpeg" height="200px">
+    &nbsp;&nbsp;&nbsp;
+    <img src="2.png" id="test2" height="200px">
+    &nbsp;&nbsp;&nbsp;
+    <img src="4.jpeg" id="test3" height="200px">
+    &nbsp;&nbsp;&nbsp;
+    <img src="mail_icon.png" height="200px" onmouseover="onMouseOver()" onmouseout="onMouseOut()">
+
+    <script>
+        function onMouseOver(){
+            document.getElementById("test1").src = "imglogo.png";
+            document.getElementById("test2").src = "imglogo.png";
+            document.getElementById("test3").src = "imglogo.png";
+        }
+        function onMouseOut(){
+            document.getElementById("test1").src = "1.jpeg";
+            document.getElementById("test2").src = "2.png";
+            document.getElementById("test3").src = "4.jpeg";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Assignemnt 17</title>
+    
+    <script>
+        var newWindow
+        function openFunction(){
+            newWindow = window.open("https://www.google.co.in/?gws_rd=ssl", "", "width=500px, height=500px");
+        }
+        function closeFunction(){
+            newWindow.close();
+        }
+    </script>
+</head>
+<body>
+    <img src="1.jpeg" height="350px" onclick="openFunction()">
+
+    <form>
+        <input type="button" value="Close Window" onclick="closeFunction()">
+    </form>
+
+</body>
+</html>

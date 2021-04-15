@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Assignemnt 15</title>
+    
+    <script>
+        var count =0;
+        function myFunction(){   
+            if(count==0){
+                document.getElementById("image").src = "1.jpeg";
+            }
+            else if (count ==1){
+                document.getElementById("image").src = "2.png";
+            }
+            else if (count ==2){
+                document.getElementById("image").src = "4.jpeg";
+            }
+            else if(count ==3){
+                document.getElementById("image").src = "imglogo.png";
+            }
+            else if(count ==4){
+                document.getElementById("image").src = "mail_icon.png";
+            }
+        }
+        function next(){
+            count += 1;
+            if(count==0){
+                document.getElementById("next").style.display = "block";
+                document.getElementById("back").style.display = "none";
+                myFunction();
+            }
+            else if (count==1){
+                document.getElementById("next").style.display = "block";
+                document.getElementById("back").style.display = "block";
+                myFunction();
+            }
+            else if (count==2){
+                document.getElementById("next").style.display = "block";
+                document.getElementById("back").style.display = "block";
+                myFunction();
+            }
+            else if (count==3){
+                document.getElementById("next").style.display = "block";
+                document.getElementById("back").style.display = "block";
+                myFunction();
+            }
+            else if (count==4){
+                document.getElementById("next").style.display = "none";
+                document.getElementById("back").style.display = "block";
+                myFunction();
+            }
+        }
+        function back(){
+            count -= 1;
+            if(count==0){
+                document.getElementById("next").style.display = "block";
+                document.getElementById("back").style.display = "none";
+                myFunction();
+            }
+            else if (count==1){
+                document.getElementById("next").style.display = "block";
+                document.getElementById("back").style.display = "block";
+                myFunction();
+            }
+            else if (count==2){
+                document.getElementById("next").style.display = "block";
+                document.getElementById("back").style.display = "block";
+                myFunction();
+            }
+            else if (count==3){
+                document.getElementById("next").style.display = "block";
+                document.getElementById("back").style.display = "block";
+                myFunction();
+            }
+            else if (count==4){
+                document.getElementById("next").style.display = "none";
+                document.getElementById("back").style.display = "block";
+                myFunction();
+            }
+        }
+    </script>
+</head>
+<body>
+    <img id="image" src="1.jpeg" height="300px">
+    <br><br>
+    <button id="next" onclick="next()" style="position: absolute; top: 330px;">Next Image</button>
+    <br><br>
+    <button id="back" onclick="back()" style="display: none; position: absolute; top: 370px">Previous Image</button>
+
+</body>
+</html>

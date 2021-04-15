@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Assignemnt 18</title>
+    
+    <script>
+        var a1;
+        var a2;
+        var a3;
+        var a4;
+        var a5;
+        var a6;
+        var left1 = window.screen.availWidth - 350;
+        var top1 = window.screen.availHeight-200;
+        var top2 = top1 /2;
+        var left2 = left1/2;
+        function openFunction(){    
+            var leftRandom = (Math.random() * window.screen.availWidth);
+            var topRandom = (Math.random() * window.screen.availHeight);
+            document.getElementById("p").textContent = leftRandom;
+            document.getElementById("p1").textContent = topRandom;
+            a1 = window.open("", "", 'width=350px, height=200px, left=0px, top=0px');
+            a2 = window.open("", "", 'width=350px, height=200px,top=0px, left=' + left1);
+            a3 = window.open("", "", 'width=350px, height=200px, left=0px, top=' + top1);
+            a4 = window.open("", "", 'width=350px, height=200px, left=' + left1 + ', top=' + top1);
+            a5 = window.open("", "", 'width=350px, height=200px, left=' + left2 + ', top=' + top2);
+            a6 = window.open("", "", 'width=350px, height=200px, left=' + leftRandom + ', top=' + topRandom);
+            
+        }
+        function closeFunction(){
+            // window.close()
+            a1.close();
+            a2.close();
+            a3.close();
+            a4.close();
+            a5.close();
+            a6.close();
+        }
+    </script>
+</head>
+<body>
+    <img src="1.jpeg" height="350px" onclick="openFunction()">
+    <p id="p"></p>
+    <p id="p1"></p>
+    <form>
+        <input type="button" value="Close Window" onclick="closeFunction()">
+    </form>
+</body>
+</html>
